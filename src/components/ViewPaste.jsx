@@ -9,29 +9,24 @@ function ViewPaste() {
   const paste=allPastes.find((p)=>p._id===id);
 
   return (
-    <div>
-      <div className="flex flex-row gap-7 place-content-between">
+    <div className="w-full max-w-5xl mx-auto px-4 py-6">
+      <div className="mb-4">
         <input
           type="text"
-          placeholder="Enter your text"
-          className="border-2 border-amber-700 p-2 mt-2 rounded-xl"
+          placeholder="Paste title"
+          className="w-full border-2 border-amber-700 p-3 rounded-xl bg-white text-gray-800"
           value={paste.title}
           disabled
           onChange={(e) => setTitle(e.target.value)}
         />
-        {/* <button 
-        onClick={createPaste} 
-        className=" border-2 border-amber-700 p-2 mt-2 rounded-xl ">
-          {pasteId ? "Update Paste" : "Create Paste"}
-        </button> */}
       </div>
       <div>
         <textarea
-          className="border-2 border-amber-700 p-2 mt-2 rounded-2xl w-full h-96"
+          className="border-2 border-amber-700 p-4 rounded-xl w-full h-96 bg-white text-gray-800"
           value={paste.content}
           rows={20}
           disabled
-          placeholder="Enter your content here"
+          placeholder="Content"
           onChange={(e) => setValue(e.target.value)}
         ></textarea>
       </div>
